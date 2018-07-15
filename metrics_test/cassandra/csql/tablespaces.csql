@@ -1,0 +1,13 @@
+ CREATE KEYSPACE "my_status"
+  WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1
+};
+
+ CREATE TABLE "users" (
+  "username" text PRIMARY KEY,
+  "email" text,
+  "encrypted_password" blob );
+
+ INSERT INTO "users"
+  ("username", "email", "encrypted_password")
+ VALUES
+  (   'alice',   'alice@gmail.com',   0x8914977ed729792e403da53024c6069a9158b8c4 );
